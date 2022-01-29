@@ -33,8 +33,8 @@ module if2id(
     input wire [`Hold_Flag_Bus] hold_flag_i,
 
     //peripherial interrupt flag
-    //
-    //
+    input wire[`INT_BUS] int_flag_i,        // 外设中断输入信号；7位
+    output wire[`INT_BUS] int_flag_o,
 
     //to idu
     output wire [`InstBus]      inst_o,
@@ -53,6 +53,8 @@ module if2id(
     assign inst_addr_o = inst_addr;
 
     //peripherial interrupt
-
+    wire[`INT_BUS] int_flag;
+    gen_pipe_dff #(8) int_ff(clk, rstn, hold_en, `INT_NONE, int_flag_i, int_flag);
+    assign int_flag_o = int_flag;
     
 endmodule

@@ -47,7 +47,7 @@ module csr_reg(
     output wire [`RegWidthBus] clint_csr_mstatus,
 
     //global interrupt
-    output wire [`RegWidthBus] global_inter_en_o
+    output wire global_inter_en_o
 
     );
 

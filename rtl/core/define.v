@@ -30,6 +30,12 @@
 `define Hold_If       3'b010 
 `define Hold_Id       3'b011        //3个流水线都暂停
 
+`define INT_BUS 7:0
+`define INT_NONE 8'h0
+`define INT_RET 8'hff
+`define INT_TIMER0 8'b00000001
+`define INT_TIMER0_ENTRY_ADDR 32'h4
+
 //common regfile
 `define RegNumbBus  4:0
 `define RegNumb  32
@@ -55,14 +61,7 @@
 `define CSR_MSTATUS 12'h300
 `define CSR_MSCRATCH 12'h340
 
-// CSR inst
-`define INST_CSR    7'b1110011
-`define INST_CSRRW  3'b001
-`define INST_CSRRS  3'b010
-`define INST_CSRRC  3'b011
-`define INST_CSRRWI 3'b101
-`define INST_CSRRSI 3'b110
-`define INST_CSRRCI 3'b111
+
 
 //instruction 
 `define InstBus 31:0
@@ -139,4 +138,13 @@
 `define INST_BLT    3'b100
 `define INST_BGE    3'b101
 `define INST_BLTU   3'b110
-`define INST_BGEU   3'b11
+`define INST_BGEU   3'b111
+
+// CSR inst
+`define INST_CSR    7'b1110011
+`define INST_CSRRW  3'b001
+`define INST_CSRRS  3'b010
+`define INST_CSRRC  3'b011
+`define INST_CSRRWI 3'b101
+`define INST_CSRRSI 3'b110
+`define INST_CSRRCI 3'b111
